@@ -1,0 +1,121 @@
+require 'net/http'
+require 'time'
+require 'securerandom'
+require 'uri'
+require 'base64'
+require 'hmac-sha1'
+require 'json'
+
+module Aliyun
+  module ECS
+    class Service
+      attr_accessor :options, :access_key_id, :access_key_secret, :endpoint_url
+
+      def initialize(options={})
+        self.access_key_id = options[:access_key_id] || $ACCESS_KEY_ID || ""
+        self.access_key_secret = options[:access_key_secret] || $ACCESS_KEY_SECRET || ""
+        self.endpoint_url = options[:endpoint_url] || $ENDPOINT_URL || ALIYUN_API_ENDPOINT
+        self.options = {:AccessKeyId => self.access_key_id}
+      end
+
+      def method_missing(method_name, *args)
+        if $VERBOSE
+          puts "Not Found Method: #{method_name}"
+        end
+
+        if args[0].nil?
+          raise AliyunAPIException.new "No such method #{method_name}!"
+        end
+
+        call_aliyun_with_parameter(method_name, args[0])
+      end
+
+      #Dispatch the request with parameter
+      private
+      def call_aliyun_with_parameter(method_name, params)
+        params = gen_request_parameters method_name, params
+        uri = URI(endpoint_url)
+
+        uri.query = URI.encode_www_form(params)
+
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true if (uri.scheme == "https")
+
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        if $VERBOSE
+          puts "request url: #{uri.request_uri}"
+        end
+
+        request = Net::HTTP::Get.new(uri.request_uri)
+        response = http.request(request)
+
+        case response
+        when Net::HTTPSuccess
+          return JSON.parse(response.body)
+        else
+          raise AliyunAPIException.new "response error code: #{response.code} and details #{response.body}"
+        end
+      end
+
+      #generate the parameters
+      def gen_request_parameters method_name, params
+        #add common parameters
+        params.merge! DEFAULT_PARAMETERS
+
+        params.merge! self.options
+
+        params[:Action] = method_name.to_s
+        params[:TimeStamp] = Time.now.utc.iso8601
+        params[:SignatureNonce] = SecureRandom.uuid
+        params[:Signature] = compute_signature params
+
+        params
+      end
+
+      #compute the signature of the parameters String
+      def compute_signature params
+        if $VERBOSE
+          puts "keys before sorted: #{params.keys}"
+        end
+
+        sorted_keys = params.keys.sort
+
+        if $VERBOSE
+          puts "keys after sorted: #{sorted_keys}"
+        end
+
+        canonicalized_query_string = ""
+
+        canonicalized_query_string = sorted_keys.map {|key|
+          "%s=%s" % [safe_encode(key.to_s), safe_encode(params[key])]
+        }.join(SEPARATOR)
+
+        length = canonicalized_query_string.length
+
+        string_to_sign = HTTP_METHOD + SEPARATOR + safe_encode('/') + SEPARATOR + safe_encode(canonicalized_query_string)
+
+        if $VERBOSE
+          puts "string_to_sign is #{string_to_sign}"
+        end
+
+        signature = calculate_signature access_key_secret+"&", string_to_sign
+      end
+
+      #calculate the signature
+      def calculate_signature key, string_to_sign
+        hmac = HMAC::SHA1.new(key)
+        hmac.update(string_to_sign)
+        signature = Base64.encode64(hmac.digest).gsub("\n", '')
+        if $VERBOSE
+          puts "signature #{signature}"
+        end
+        signature
+      end
+
+      #encode the value to aliyun's requirement
+      def safe_encode value
+        value = URI.encode_www_form_component(value).gsub(/\+/,'%20').gsub(/\*/,'%2A').gsub(/%7E/,'~')
+      end
+    end
+  end
+end
