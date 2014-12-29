@@ -2,6 +2,8 @@
 
 Ruby wrapper of Aliyun API for system adminstrator.
 
+[![Gem Version](https://badge.fury.io/rb/aliyun.png)](http://badge.fury.io/rb/aliyun)
+
 ## Installation
 
 Add this line to your application's Gemfile:
