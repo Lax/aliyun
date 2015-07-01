@@ -1,6 +1,6 @@
 module Aliyun
   class APIConfig
-    def self.name
+    def self.info
       raise "Service Name Missing!"
     end
     def self.endpoint

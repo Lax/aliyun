@@ -5,7 +5,7 @@ $DEBUG=false
 
 options = {:access_key_id => "xxxxxx",
            :access_key_secret => "yyyyy",
-           :endpoint_url => "https://ecs.aliyuncs.com/"}
+           :service => :ecs}
 
 service = Aliyun::Service.new options
 

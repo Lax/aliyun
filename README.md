@@ -28,7 +28,7 @@ Example:
     options = {
       :access_key_id => "_YOUR_API_KEY_",
       :access_key_secret => "_YOUR_API_SECRET_",
-      :endpoint_url => "https://ecs.aliyuncs.com/"
+      :service => :ecs
     }
 
     service = Aliyun::Service.new options

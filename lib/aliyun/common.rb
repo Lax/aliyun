@@ -14,7 +14,7 @@ module Aliyun
     attr_accessor :service
 
     def initialize(options={})
-      options[:service] ||= "ecs"
+      options[:service] ||= :ecs
       self.service = SERVICES[options[:service].to_sym]
       self.access_key_id = options[:access_key_id]
       self.access_key_secret = options[:access_key_secret]
