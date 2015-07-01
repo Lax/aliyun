@@ -15,14 +15,14 @@ describe Aliyun do
 
   it 'can create aliyun ecs service' do
     options = load_options
-    service = Aliyun::ECS::Service.new options
+    service = Aliyun::Service.new options
 
-    expect(service).to be_instance_of(Aliyun::ECS::Service)
+    expect(service).to be_instance_of(Aliyun::Service)
   end
 
   it 'can query aliyun regions' do
     options = load_options
-    service = Aliyun::ECS::Service.new options
+    service = Aliyun::Service.new options
     parameters = {}
     regions = service.DescribeRegions parameters
 

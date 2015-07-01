@@ -31,7 +31,7 @@ Example:
       :endpoint_url => "https://ecs.aliyuncs.com/"
     }
 
-    service = Aliyun::ECS::Service.new options
+    service = Aliyun::Service.new options
     parameters = {}
 
     puts service.DescribeRegions parameters
