@@ -1,3 +1,4 @@
 require "aliyun/version"
 require "aliyun/base"
-require "aliyun/ecs"
+require "aliyun/services"
+require "aliyun/common"

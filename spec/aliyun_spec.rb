@@ -22,6 +22,7 @@ describe Aliyun do
 
   it 'can query aliyun regions' do
     options = load_options
+    options["service"] = "ecs"
     service = Aliyun::Service.new options
     parameters = {}
     regions = service.DescribeRegions parameters

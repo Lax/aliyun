@@ -1,18 +1,21 @@
 module Aliyun
-  ALIYUN_API_ENDPOINT='https://ecs.aliyuncs.com/'
-  SEPARATOR = "&"
-  HTTP_METHOD = "GET"
-
-  $ENDPOINT_URL = nil
-  $ACCESS_KEY_ID = nil
-  $ACCESS_KEY_SECRET = nil
-
-  DEFAULT_PARAMETERS = {
-    :Format=>"JSON",
-    :Version=>"2014-05-26",
-    :SignatureMethod=>"HMAC-SHA1",
-    :SignatureVersion=>"1.0"
-  }
+  class APIConfig
+    def self.name
+      raise "Service Name Missing!"
+    end
+    def self.endpoint
+      raise "Service Endpoint Missing!"
+    end
+    def self.default_parameters
+      raise "Service Default Parameters Missing!"
+    end
+    def self.separator
+      "&"
+    end
+    def self.http_method
+      "GET"
+    end
+  end
 
   class AliyunAPIException < RuntimeError
   end

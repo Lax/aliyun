@@ -11,11 +11,14 @@ module Aliyun
     attr_accessor :access_key_id, :access_key_secret
     attr_accessor :options
     attr_accessor :endpoint_url
+    attr_accessor :service
 
     def initialize(options={})
-      self.access_key_id = options[:access_key_id] || $ACCESS_KEY_ID || ""
-      self.access_key_secret = options[:access_key_secret] || $ACCESS_KEY_SECRET || ""
-      self.endpoint_url = options[:endpoint_url] || $ENDPOINT_URL || ALIYUN_API_ENDPOINT
+      options[:service] ||= "ecs"
+      self.service = SERVICES[options[:service].to_sym]
+      self.access_key_id = options[:access_key_id]
+      self.access_key_secret = options[:access_key_secret]
+      self.endpoint_url = options[:endpoint_url] || self.service.endpoint
       self.options = {:AccessKeyId => self.access_key_id}
     end
 
@@ -61,7 +64,7 @@ module Aliyun
     #generate the parameters
     def gen_request_parameters method, params
       #add common parameters
-      params.merge! DEFAULT_PARAMETERS
+      params.merge! self.service.default_parameters
 
       params.merge! self.options
 
@@ -89,11 +92,11 @@ module Aliyun
 
       canonicalized_query_string = sorted_keys.map {|key|
         "%s=%s" % [safe_encode(key.to_s), safe_encode(params[key])]
-      }.join(SEPARATOR)
+      }.join(self.service.separator)
 
       length = canonicalized_query_string.length
 
-      string_to_sign = HTTP_METHOD + SEPARATOR + safe_encode('/') + SEPARATOR + safe_encode(canonicalized_query_string)
+      string_to_sign = self.service.http_method + self.service.separator + safe_encode('/') + self.service.separator + safe_encode(canonicalized_query_string)
 
       if $DEBUG
         puts "string_to_sign is #{string_to_sign}"
