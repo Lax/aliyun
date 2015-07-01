@@ -10,7 +10,6 @@ describe Aliyun do
 
     expect(option).to have_key(:access_key_id)
     expect(option).to have_key(:access_key_secret)
-    expect(option).to have_key(:entrypoint_url)
   end
 
   it 'can create aliyun ecs service' do
