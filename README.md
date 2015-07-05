@@ -4,6 +4,10 @@ Ruby wrapper of Aliyun API for system adminstrator.
 
 [![Gem Version](https://badge.fury.io/rb/aliyun.png)](http://badge.fury.io/rb/aliyun)
 
+*   master [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=master)](https://travis-ci.org/Lax/aliyun)
+*   release-0.3 [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=release-0.3)](https://travis-ci.org/Lax/aliyun)
+*   v0.3.1 [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=v0.3.1)](https://travis-ci.org/Lax/aliyun)
+
 ## Installation
 
 Add this line to your application's Gemfile:
