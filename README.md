@@ -1,12 +1,14 @@
 # Aliyun
 
-Ruby wrapper of Aliyun API for system adminstrator.
+[![Fury](https://badge.fury.io/rb/aliyun.png)](http://badge.fury.io/rb/aliyun)
+[![Travis](https://travis-ci.org/Lax/aliyun.svg?branch=master)](https://travis-ci.org/Lax/aliyun)
+[![CircleCI](https://circleci.com/gh/Lax/aliyun/tree/master.png?style=shield)](https://circleci.com/gh/Lax/aliyun)
+[![security](https://hakiri.io/github/Lax/aliyun/master.svg)](https://hakiri.io/github/Lax/aliyun/master)
+[![Test Coverage](https://codeclimate.com/github/Lax/aliyun/badges/coverage.svg)](https://codeclimate.com/github/Lax/aliyun/coverage)
+[![Code Climate](https://codeclimate.com/github/Lax/aliyun/badges/gpa.svg)](https://codeclimate.com/github/Lax/aliyun)
+[![Dependency Status](https://gemnasium.com/Lax/aliyun.svg)](https://gemnasium.com/Lax/aliyun)
 
-[![Gem Version](https://badge.fury.io/rb/aliyun.png)](http://badge.fury.io/rb/aliyun)
-
-*   [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=master)](https://travis-ci.org/Lax/aliyun) [![master](https://circleci.com/gh/Lax/aliyun/tree/master.png?style=shield)](https://circleci.com/gh/Lax/aliyun) master
-*   [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=release-0.3)](https://travis-ci.org/Lax/aliyun) release-0.3
-*   [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=v0.3.1)](https://travis-ci.org/Lax/aliyun) v0.3.1
+Ruby wrapper of Aliyun API for system adminstrators.
 
 ## Installation
 
