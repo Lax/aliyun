@@ -1,24 +1,26 @@
 # Aliyun
 
+[![Fury](https://badge.fury.io/rb/aliyun.png)](http://badge.fury.io/rb/aliyun)
+[![Code Climate](https://codeclimate.com/github/Lax/aliyun/badges/gpa.svg)](https://codeclimate.com/github/Lax/aliyun)
+[![Test Coverage](https://codeclimate.com/github/Lax/aliyun/badges/coverage.svg)](https://codeclimate.com/github/Lax/aliyun/coverage)
+[![Travis](https://travis-ci.org/Lax/aliyun.svg?branch=master)](https://travis-ci.org/Lax/aliyun)
+[![CircleCI](https://circleci.com/gh/Lax/aliyun/tree/master.png?style=shield)](https://circleci.com/gh/Lax/aliyun)
+[![security](https://hakiri.io/github/Lax/aliyun/master.svg)](https://hakiri.io/github/Lax/aliyun/master)
+[![Dependency Status](https://gemnasium.com/Lax/aliyun.svg)](https://gemnasium.com/Lax/aliyun)
+
 Ruby wrapper of Aliyun API for system adminstrator.
-
-[![Gem Version](https://badge.fury.io/rb/aliyun.png)](http://badge.fury.io/rb/aliyun)
-
-*   [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=master)](https://travis-ci.org/Lax/aliyun) [![master](https://circleci.com/gh/Lax/aliyun/tree/master.png?style=shield)](https://circleci.com/gh/Lax/aliyun) master
-*   [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=release-0.3)](https://travis-ci.org/Lax/aliyun) release-0.3
-*   [![Build Status](https://travis-ci.org/Lax/aliyun.svg?branch=v0.3.1)](https://travis-ci.org/Lax/aliyun) v0.3.1
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add `gem 'aliyun'` to your application's Gemfile:
 
     gem 'aliyun'
 
-And then execute:
+And then run:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
+Or install it with gem command:
 
     $ gem install aliyun
 
