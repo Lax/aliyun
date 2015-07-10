@@ -69,7 +69,7 @@ module Aliyun
       params.merge! self.options
 
       params[:Action] = method.to_s
-      params[:TimeStamp] = Time.now.utc.iso8601
+      params[:Timestamp] = Time.now.utc.iso8601
       params[:SignatureNonce] = SecureRandom.uuid
       params[:Signature] = compute_signature params
 

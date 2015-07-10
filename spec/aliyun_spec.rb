@@ -48,6 +48,15 @@ describe Aliyun do
     expect(service.service).to be(Aliyun::CDNConfig)
   end
 
+  it 'can create aliyun ram service' do
+    options = load_options
+    options[:service] = :ram
+    service = Aliyun::Service.new options
+
+    expect(service).to be_instance_of(Aliyun::Service)
+    expect(service.service).to be(Aliyun::RAMConfig)
+  end
+
   it 'can query aliyun ecs regions' do
     options = load_options
     options[:service] = :ecs
@@ -91,6 +100,17 @@ describe Aliyun do
     expect(cdn_service).to have_key("InternetChargeType")
     expect(cdn_service).to have_key("OpeningTime")
   end
+
+#  it 'can list aliyun ram users' do
+#    options = load_options
+#    options[:service] = :ram
+#    service = Aliyun::Service.new options
+#    parameters = {}
+#    users = service.ListUsers parameters
+#
+#    expect(users).to have_key("Users")
+#    expect(users["Users"]).to have_key("User")
+#  end
 
   it "can describe aliyun slb regions" do
     options = load_options
