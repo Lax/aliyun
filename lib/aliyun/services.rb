@@ -3,6 +3,7 @@ require "aliyun/services/slb"
 require "aliyun/services/rds"
 require "aliyun/services/cdn"
 require "aliyun/services/ram"
+require "aliyun/services/sts"
 
 module Aliyun
   SERVICES = {
@@ -10,6 +11,7 @@ module Aliyun
     :slb => SLBConfig,
     :rds => RDSConfig,
     :cdn => CDNConfig,
-    :ram => RAMConfig
+    :ram => RAMConfig,
+    :sts => STSConfig
   }
 end
