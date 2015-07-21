@@ -42,7 +42,17 @@ Example:
 
     puts service.DescribeRegions parameters
 
-You can create/fetch `access key`/`secret` at [https://i.aliyun.com/access_key](https://i.aliyun.com/access_key)
+You can create/fetch `access key` and `secret` at [https://i.aliyun.com/access_key](https://i.aliyun.com/access_key)
+
+Current support these services:
+
+* `:cdn` => `CDN` (Content Delivery Network)
+* `:cms` => `CMS` (Cloud Monitor Service)
+* `:ecs` => `ECS` (Elastic Compute Service)
+* `:ram` => `RAM` (Resource Access Management)
+* `:rds` => `RDS` (Relational Database Service)
+* `:slb` => `SLB` (Server Load Balancer)
+* `:sts` => `STS` (Security Token Service)
 
 ## Contributing
 
