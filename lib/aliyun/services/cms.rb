@@ -4,7 +4,7 @@ module Aliyun
       "Aliyu CMS Service"
     end
     def self.endpoint
-      'https://metrics.aliyuncs.com/'
+      'http://metrics.aliyuncs.com/'
     end
     def self.default_parameters
       {
