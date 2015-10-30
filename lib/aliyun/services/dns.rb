@@ -1,7 +1,7 @@
 module Aliyun
   class DNSConfig < APIConfig
     def self.info
-      "Aliyu DNS Service"
+      "Aliyun DNS Service"
     end
     def self.endpoint
       'https://dns.aliyuncs.com/'
