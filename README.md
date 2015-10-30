@@ -48,6 +48,7 @@ Current support these services:
 
 * `:cdn` => `CDN` (Content Delivery Network)
 * `:cms` => `CMS` (Cloud Monitor Service)
+* `:dns` => `DNS` (Domain Name Service)
 * `:ecs` => `ECS` (Elastic Compute Service)
 * `:ram` => `RAM` (Resource Access Management)
 * `:rds` => `RDS` (Relational Database Service)
