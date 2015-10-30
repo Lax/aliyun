@@ -16,7 +16,6 @@ describe Aliyun do
     service = Aliyun::Service.new options
     parameters = {}
     dns_service = service.DescribeDomains parameters
-    puts dns_service
 
     expect(dns_service).to have_key("Domains")
     expect(dns_service).to have_key("TotalCount")
