@@ -4,7 +4,7 @@ module Aliyun
       "Aliyu DNS Service"
     end
     def self.endpoint
-      'http://dns.aliyuncs.com/'
+      'https://dns.aliyuncs.com/'
     end
     def self.default_parameters
       {
