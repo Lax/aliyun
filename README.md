@@ -7,6 +7,7 @@
 [![CircleCI](https://circleci.com/gh/Lax/aliyun/tree/master.png?style=shield)](https://circleci.com/gh/Lax/aliyun)
 [![security](https://hakiri.io/github/Lax/aliyun/master.svg)](https://hakiri.io/github/Lax/aliyun/master)
 [![Dependency Status](https://gemnasium.com/Lax/aliyun.svg)](https://gemnasium.com/Lax/aliyun)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLax%2Faliyun.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FLax%2Faliyun?ref=badge_shield)
 
 Ruby wrapper of Aliyun API for system adminstrator.
 
@@ -66,3 +67,7 @@ Current support these services:
 ## Author
 
 * [Liu Lantao](https://github.com/Lax)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLax%2Faliyun.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FLax%2Faliyun?ref=badge_large)
