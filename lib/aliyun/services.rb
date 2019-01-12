@@ -2,6 +2,7 @@ require "aliyun/services/cdn"
 require "aliyun/services/cms"
 require "aliyun/services/dns"
 require "aliyun/services/ecs"
+require "aliyun/services/oss"
 require "aliyun/services/ram"
 require "aliyun/services/rds"
 require "aliyun/services/slb"
@@ -14,6 +15,7 @@ module Aliyun
     :cms => CMSConfig,
     :dns => DNSConfig,
     :ecs => ECSConfig,
+    :oss => OSSConfig,
     :ram => RAMConfig,
     :rds => RDSConfig,
     :slb => SLBConfig,

@@ -51,6 +51,7 @@ Current support these services:
 * `:cms` => `CMS` (Cloud Monitor Service)
 * `:dns` => `DNS` (Domain Name Service)
 * `:ecs` => `ECS` (Elastic Compute Service)
+* `:oss` => `OSS` (Object Storage Service)
 * `:ram` => `RAM` (Resource Access Management)
 * `:rds` => `RDS` (Relational Database Service)
 * `:slb` => `SLB` (Server Load Balancer)
