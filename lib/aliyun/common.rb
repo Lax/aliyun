@@ -45,7 +45,7 @@ module Aliyun
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = (uri.scheme == "https")
 
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
       if $DEBUG
         puts "Request URI: #{uri.request_uri}"
       end
