@@ -55,6 +55,8 @@ Current support these services:
 * `:rds` => `RDS` (Relational Database Service)
 * `:slb` => `SLB` (Server Load Balancer)
 * `:sts` => `STS` (Security Token Service)
+* `:vpc` => `VPC` (Virtual Private Cloud)
+* `:business` => `Business` (Aliyun Account Management)
 
 ## Contributing
 
