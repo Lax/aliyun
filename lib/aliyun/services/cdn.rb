@@ -9,7 +9,7 @@ module Aliyun
     def self.default_parameters
       {
         :Format=>"JSON",
-        :Version=>"2014-11-11",
+        :Version=>"2018-05-10",
         :SignatureMethod=>"HMAC-SHA1",
         :SignatureVersion=>"1.0"
       }
